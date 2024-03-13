@@ -1,0 +1,11 @@
+{% extends "core/base.html" %}
+
+{% block content %} {{ block.super }}
+<!--================================= Payment Start Here==============================================-->
+<br><br><br><br>    
+<div class="row" align='center'>
+      {{paypal.render}}
+
+    </div>
+
+{% endblock content %} {{ block.super }}

@@ -1,0 +1,15 @@
+
+.d-block{
+    object-fit: contain;
+} 
+
+/* #img{
+    width: fit-content;
+    height: 500px;
+} */
+.head{
+    margin-right: 200px;
+}
+body{
+    color: black;
+}

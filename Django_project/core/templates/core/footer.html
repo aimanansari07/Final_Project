@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .footer {
+  background-color: #f8f9fa;
+  padding: 2rem 0;
+  border-top: 1px solid #e9ecef;
+}
+
+.footer p {
+  margin-bottom: 0;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer li {
+  margin-bottom: 0.5rem;
+}
+
+.footer a {
+  color: #6c757d;
+  text-decoration: none;
+  
+}
+.footer a { 
+    
+color: #6c757d; 
+transition: color 0.3s ease; } 
+
+.footer a:hover { 
+    color: #007bff;
+ }
+ footer {
+   
+  flex:1 ;
+  left: 0;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+}
+
+
+</style>
+<body >
+    <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <p class="text-muted">Copyright © 2023 KingCars.com. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-right">
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  <a class="text-muted"href="{% url "privacy" %}">Privacy Policy</a>
+                </li>
+                
+                <li class="list-inline-item">
+                  <a class="text-muted" href="{% url "contact" %}">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+</body>
+</html>

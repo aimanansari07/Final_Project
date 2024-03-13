@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+
+<head>
+  <!-- Required meta tags -->
+  <!-- <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <style>
+      .btn-primary{
+        margin-left: 100px;
+       
+    }
+    /* Add a transition effect to the card elements */
+.card {
+transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Change the transform and box-shadow of the card on hover */
+.card:hover {
+transform: scale(1.05);
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Add a hover effect to the card title and text */
+.card:hover .card-title, .card:hover .card-text {
+color: black;
+}
+
+/* Add a hover effect to the card button */
+.card:hover .btn {
+background-color: black;
+border: 1px solid white;
+color: white;
+}
+
+/* Add an animation to the card title and text on page load */
+.card-title, .card-text {
+animation: fade-in 0.5s ease-in-out;
+}
+
+@keyframes fade-in {
+0% {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+100% {
+  opacity: 1;
+  transform: translateY(0);
+}
+}
+  </style>
+
+
+  <title>Cards</title>
+</head>
+
+<body> 
+  <fieldset >
+    <legend align="center">
+     <br> <h1 align="center" class="legend">Explore!</h1>
+  </legend>
+
+  <div class="container mt-2">
+    <div class="row">
+
+
+      <div class="col-md-4" >
+        <div class="card"  style="border-color: black; border-radius: 25px">
+          <div class="card-body">
+            <img class="card-img-top" src="static/core/images/sedan.jpg" alt="Card image" style="width:100%">
+            <!-- Card content goes here -->
+            <h4 class="card-title">Sedan</h4>
+            <p class="card-text">
+              Sedan cars offer stylish design, comfortable interiors, and smooth handling—a perfect blend of performance, elegance, and practicality on the road.</p>
+            <a href="{% url "sedan" %}" class="btn btn-primary" style="background-color: black; border-radius: 10px; ">view more</a>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card"  style="border-color: black; border-radius: 25px">
+          <div class="card-body">
+            <img class="card-img-top" src="static/core/images/suv.jpg" alt="Card image" style="width:100%">
+            <!-- Card content goes here -->
+            <h4 class="card-title">Suv</h4>
+            <p class="card-text">SUVs, or Sport Utility Vehicles, provide versatility, spacious interiors, and robust performance, making them ideal for various terrains and lifestyles.</p>
+            <a href="{% url "suv" %}" class="btn btn-primary" style="background-color: black; border-radius: 10px;">view more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card"  style="border-color: black; border-radius: 25px;">
+          <div class="card-body">
+            <img class="card-img-top" src="static/core/images/sports.jpg" alt="Card image" style="width:100%">
+            <!-- Card content goes here -->
+            <h4 class="card-title">Sports</h4>
+            <p class="card-text">
+              Sports cars epitomize speed, agility, and sleek design. With high-performance engines and dynamic handling, they deliver an exhilarating driving experience.</p>
+            <a href="{% url "sports" %}" class="btn btn-primary" style="background-color: black; border-radius: 10px; margin-top: 10px;">view more</a>
+          </div>
+        </div>
+      </div>
+     
+
+      <!-- Add more col-md-4 for additional cards -->
+
+    </div>
+  </div>
+</fieldset>
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

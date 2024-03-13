@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+       
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "core/css/fontawesome.css" %}">
+
+    <title>{% block title %}{% endblock title %}</title>
+    <style>
+       .nav-item{
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     
+       }
+      /* Style the navigation bar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: medium;
+}
+
+.navbar-toggler-icon {
+  background-color: black;
+}
+
+.navbar-collapse {
+  justify-content: center;
+}
+
+.navbar-nav .nav-link {
+  padding: 0.5rem 1rem;
+  font-size: medium;
+  font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: black;
+}
+
+.navbar-nav .active .nav-link {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: black;
+}
+
+.dropdown-menu {
+  font-size: 1.2rem;
+  border-radius: 0;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu .dropdown-item {
+  padding: 0.5rem 1rem;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: black;
+}
+
+.dropdown-menu .active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: black;
+}
+
+.form-inline .form-control {
+  border-radius: 50px;
+}
+
+.form-inline .btn {
+  border-radius: 50px;
+}
+
+.form-inline .btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: black;
+}
+
+@media (max-width: 767.98px) {
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+  }
+
+  .dropdown-menu {
+    font-size: 1rem;
+  }
+
+  .dropdown-menu .dropdown-item {
+    padding: 0.25rem 0.5rem;
+  }
+
+  .form-inline .form-control {
+    width: 100%;
+  }
+}
+.btag{
+  color:black;
+
+}
+
+.btag:hover{
+  color: rgb(233,75,60);
+  text-shadow: 2px 2px 4px  white;
+  font-size: medium;
+  font-style: oblique;}
+    </style>
+    
+
+</head>
+
+<body >
+    {% block content %}
+
+
+    <nav class="navbar navbar-expand-lg  fixed-top" style="background-color:#E1F0DA;">
+        <a class="navbar-brand" href="{% url "main" %}"style="color:black;">KingCars</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href="{% url "main" %}" style="color: black;"><b class='btag'>Home</b>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link " href="{% url "about" %}" style="color: black;"><b class='btag'>About Us</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="{% url "contact" %}" style="color: black;"><b class='btag'>Contact Us</b></a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="category.html" role="button" data-toggle="dropdown"
+                        aria-expanded="false" style="color: black;">
+                        <b class='btag'>Category</b>
+                    </a>
+                    <div class="dropdown-menu active"
+                        style="background-color: #E1F0DA; border-color: white; font-size: medium;">
+                        <a class="dropdown-item" href="{% url "sedan" %}" style="color: black;"><b class='btag'>Sedan</b></a>
+                        <a class="dropdown-item" href="{% url "suv" %}" style="color: black;"><b class='btag'>Suv</b></a>
+                        <a class="dropdown-item" href="{% url "sports" %}" style="color: black;"><b class='btag'>Sports</b></a>
+                    </div>
+                </li>
+                
+
+
+            </ul>
+            <ul class="navbar-nav">
+                {% if request.user.is_authenticated %}
+                <li class="nav-item ">
+                  <a class="nav-link mr-4" href="{% url "profile" %}"><b class='btag'>Welcome {{user.first_name}}</b></a>
+                </li> 
+                <li class="nav-item">
+                  <a class="nav-link mr-3" href="{% url "viewcart" %}">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                  </a>
+              </li>         
+                </li><li class="nav-item">
+                  <a class="nav-link mr-4" href="{% url "logout" %}"><b class='btag'>Logout</b></a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                  <a class="nav-link mr-3" href="{% url "signup" %}"><b class='btag'>Register</b></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link mr-3" href="{% url "login" %}"><b class='btag'>Login</b></a>
+                </li>
+                {% endif %}
+              </ul>
+           
+        </div>
+    </nav>
+
+   
+
+
+
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+        <script src="{% static "core/js/fontawesome.js" %}"></script>
+        <script src="{% static "core/js/jquery.js" %}"></script>
+        <script src="{% static "core/js/popper.js" %}"></script>
+    {% endblock content %}
+
+</body>
+
+</html>

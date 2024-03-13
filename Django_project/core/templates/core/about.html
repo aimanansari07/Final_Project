@@ -1,0 +1,33 @@
+{% extends "core/base.html" %}
+{% block title %}
+Contact us
+{% endblock title %}
+{% block content %} {{ block.super }}
+{% load static %}
+<body style="background-image: url('{% static 'core/images/about.jpg' %}');"">
+    
+
+<div class="about" style="margin-top:100px;" align='center'>
+    <div class="about-us" >
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12" align='center'>
+               
+              <h1>All About KingCars</h1>
+              <p >
+                Welcome to KingCars! We are passionate about connecting car buyers with their dream vehicles.
+                Our mission is to provide a seamless and enjoyable experience for both buyers and sellers in the automotive
+                market. With a wide range of quality cars and a user-friendly platform, we strive to make the car buying and
+                selling process hassle-free.
+            </p>
+              <p>We are a team of car enthusiasts who are passionate about connecting car buyers and sellers. Our mission is to make the car buying and selling process easy, transparent, and enjoyable for everyone involved. We believe that buying a car should be an exciting experience, not a stressful one. That's why we've built a platform that makes it easy to find and purchase the car of your dreams.</p>
+              <p>Our team is dedicated to providing the best possible experience for our users. We work hard to ensure that our platform is user-friendly, secure, and reliable. We also offer a variety of resources and tools to help you make informed decisions about your car purchase. Whether you're looking for a new or used car, we're here to help you find the perfect vehicle for your needs and budget.</p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+{% endblock content %} {{ block.super }}

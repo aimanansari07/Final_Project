@@ -1,0 +1,71 @@
+{% extends "core/base.html" %}
+{% block title %}
+Sports
+
+{% endblock title %}
+{% block content %} {{ block.super }}
+<style>
+  /* Add a transition effect to the sedan cards */
+.sedan_card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Change the transform and box-shadow of the sedan cards on hover */
+.sedan_card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Add a transition effect to the sedan card title and text */
+.sedan_card:hover .card-title, .sedan_card:hover .card-text {
+  color: black;
+}
+
+/* Add a hover effect to the sedan card button */
+.sedan_card:hover .btn {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+}
+
+/* Add an animation to the sedan card title and text on page load */
+.sedan_card-title, .sedan_card-text {
+  animation: fade-in 0.5s ease-in-out;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+
+    <!-- sedan Card-->
+<div class="container" style="margin-top:100px;"> 
+  {% load static %}                        <!-- we have created new container class-->
+    <div class="row" >                           <!-- we have created row class-->
+        {% for dc in car_category %}
+        <div class="col-sm-4 " style="margin-top:30px;">
+          <a href="{% url "cardetails" dc.id %}" style="text-decoration: none; ">        
+            <div class="card sedan_card " style="width: 18rem; height:22rem">
+                <img class="card-img-top " src="{{dc.car_image.url}}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{dc.name}}</h5>
+                   <div class="text-center">
+                        <h5 class="font-weight-bold text-dark "><i class="fa-solid fa-indian-rupee-sign"><img src="{% static 'core/images/rs.jpg' %}" alt="" srcset="" height="30px" width="25px"></i>{{dc.discounted_price}} <small class="fw-light rupee" style="text-decoration: line-through;"> {{dc.selling_price}}</small><small class="text-danger">({{percentage}}% off)</small></h5>  
+                     
+                        <button type="button" class="btn btn-dark">View More</button>
+                    </div>
+                </div>
+            </div>
+          </a>
+        </div>       
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %} {{ block.super }}

@@ -1,0 +1,120 @@
+<!--information-->
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'core/css/bootstrap.min.css' %}">
+   
+    <link rel="stylesheet" href="{% static 'core/css/fontawesome.css' %}">
+    <style>
+        .featurette {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.featurette:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2);
+}
+
+.featurette-heading {
+  font-size: 48px;
+  color: #333;
+  line-height: 1.2;
+}
+
+.featurette-image {
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.div_2_info_heading_text {
+  color: #333;
+}
+
+.div_2_info_para_text {
+  color: #666;
+}
+
+.div_3_info_heading_text {
+  color: #333;
+}
+
+.div_3_info_para_text {
+  color: #666;
+}
+.legend { color: #005a9c; font-size: 2.5rem; margin-bottom: 1rem; transition: color 0.3s ease-in-out; } .legend:hover { color: #ff6347; }
+    </style>
+
+
+</head>
+<body>
+    
+  <!-- <div class="info_heading_text">
+    <h3>About Us</h3>
+  </div> -->
+  <fieldset>
+    <legend><h1 align="center" class="legend"><br>Why KingCars!</h1></legend>
+  <div class="row featurette" style="background-color: #EEF5FF; max-width: max-content;">
+    <div class="col-md-7">
+      <h2 class="featurette-heading fw-normal lh-1 div_3_info_heading_text" style="text-align: center; padding-top:20px;">1 Year Free Car Service  <span class="text-body-secondary"></span></h2>
+      <p class="lead div_3_info_para_text" style="text-align: center;">🚗 Introducing a Milestone Celebration: 1 Year Free Service for Your New Ride! 🎉
+        At <b>KingCars</b>, we believe in making your car-buying experience extraordinary. To mark our first anniversary, we are thrilled to present a special offer that ensures your satisfaction and peace of mind. For the next 365 days, every vehicle purchased through our platform comes with an exclusive 1 Year Free Service package!</p>
+    </div>
+    <div class="col-md-5">
+      <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto "style=""    src="{% static 'core/images/service.jpg' %}" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"  width="400" height="350px"><title>Placeholder</title><rect width="50%" height="100%" fill="var(--bs-secondary-bg)"></rect>
+    </div>
+  </div>
+ {% comment %} <hr class="featurette-divider"> {% endcomment %}
+     <!--information end-->
+     <!--information 2-->
+     {% comment %} <hr class="featurette-divider"> {% endcomment %}
+     <div class="row featurette mt-4"  style="background-color: #EEF5FF; max-width: fit-content;">
+      <div class="col-md-7 order-md-2" >
+        <h2 class="featurette-heading fw-normal lh-1 div_2_info_heading_text" style="text-align: center;" >Free Registrations <span class="text-body-secondary"></span></h2>
+        <p class="lead div_2_info_para_text" style="text-align: center; " >🚗 Unleash the Freedom to Drive: Enjoy Free Car Registrations at KingCars! 🎁
+
+          Revolutionize your car buying experience with our exclusive offer: complimentary car registrations for every purchase made on our platform! At KingCars, we understand that the joy of owning a new car should be accompanied by convenience and savings. That's why, for a limited time, we're covering the cost of your car registration, putting extra money back in your pocket.</p>
+      </div>
+      <div class="col-md-5 order-md-1 " >
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto "  src="{% static 'core/images/Registrations.jpg' %}" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false" width="400" height="350px" style="padding-left: 20px;"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect>
+      </div>
+    </div>
+    {% comment %} <hr class="featurette-divider"> {% endcomment %}
+    <!--information 2 end-->
+    
+    <!--information 3-->
+    <div class="row featurette mt-4" style="background-color: #EEF5FF; max-width: fit-content;">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1 div_3_info_heading_text" style="text-align: center; padding-top:20px;">No Cost EMI<span class="text-body-secondary"></span></h2>
+        <p class="lead div_3_info_para_text" style="text-align: center;">
+          🌟 Elevate Your Driving Dreams: No Cost EMI on Car Purchases Exclusively at KingCars! 🚗✨
+          
+          Embark on a stress-free journey to car ownership with our groundbreaking offer – No Cost EMI! At KingCars, we're committed to turning your automotive aspirations into reality without breaking the bank. Now, every car purchase comes with the added advantage of zero interest on your equated monthly installments.</p>
+      </div>
+      <div class="col-md-5">
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto "style=""    src="{% static 'core/images/emi.jpg' %}" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"  width="400" height="350px "><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect>
+      </div>
+    </div>
+  </fieldset>
+</body>
+<script src="{% static 'core/js/bootstrap.min.js' %}"></script>
+      <script src="{% static 'core/js/jquery.js' %}"></script>
+      <script src="{% static 'core/js/popper.js' %}"></script>
+</html>
+    <!--infromation 3 end-->
+
+
+
+
+
+

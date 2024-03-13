@@ -1,0 +1,173 @@
+{% extends "core/base.html" %}
+
+{% block title %}Car Details{% endblock title %}
+
+{% block content %}{{ block.super }}
+<style>
+    /* Define the background for the car details container */
+.cardetails {
+  background-color: #f2f2f2;
+  background-image: url('static/core/images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Add a fade-in animation to the background image */
+.cardetails {
+  animation: fade-in-background 1s ease-in-out;
+}
+
+@keyframes fade-in-background {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Style the car details page elements */
+.cardetails .container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardetails .col-sm-6 {
+  flex: 1;
+  padding: 20px;
+}
+
+.cardetails .jumbotron-heading {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.cardetails .lead {
+  margin-bottom: 40px;
+}
+
+.cardetails .description {
+  margin-top: 40px;
+}
+
+.cardetails .btn {
+  margin-right: 10px;
+}
+
+.cardetails .btn-info {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.cardetails .btn-info:hover {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.cardetails .btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.cardetails .btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+.cardetails .img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.cardetails .border {
+  border: 1px solid #dee2e6;
+}
+
+.cardetails .border-primary {
+  border-color: #007bff;
+}
+
+.cardetails .border-danger {
+  border-color: #dc3545;
+}
+
+.cardetails .fa-indian-rupee-sign {
+  font-size: 1.5rem;
+  margin-right: 5px;
+}
+
+.cardetails .rupee {
+  font-size: 0.8rem;
+  margin-left: 5px;
+}
+
+.cardetails .font-weight-bold {
+  font-weight: bold;
+}
+
+.cardetails .text-danger {
+  color: #dc3545;
+}
+
+.cardetails .text-center {
+  text-align: center;
+}
+
+.cardetails .fw-light {
+  font-weight: 300;
+}
+
+.cardetails .my-2 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cardetails .mr-2 {
+  margin-right: 0.5rem;
+}
+
+.cardetails .mr-4 {
+  margin-right: 1.5rem;
+}
+
+.cardetails .ml-4 {
+  margin-left: 1.5rem;
+}
+</style>
+<div class="container cardetails" style="margin-top:100px;">
+    <div class="row">
+        <div class="col-sm-6">
+                <span class="border border-danger">
+                    <img src="{{pd.car_image.url}}" class="img-fluid rounded border border-primary" alt="Responsive image" >
+                </span>
+        </div>
+        <div class="col-sm-6">
+            <div class="container">
+                <h1 class="jumbotron-heading text-center text-danger">{{pd.name}}</h1>
+                <p class="lead text-center">{{pd.small_description}}</p>
+                    <div class="text-center">
+                        <h4 class="font-weight-bold"><i class="fa-solid fa-indian-rupee-sign"></i>{{pd.discounted_price}} <small class="fw-light rupee" style="text-decoration: line-through;">{{pd.selling_price}}</small> <small class="text-danger">({{percentage}}% off)</small></h4> 
+                        <a href="{% url 'addtocart' pd.id %}" class="btn btn-info my-2 mr-2">Add to cart</a>  
+                        
+                        <a  href="{% url "buynow" pd.id %}" class="btn btn-danger my-2" style="width: 350px;">Buy Now</a>
+                    </div>
+                <div class="description">
+                <h2 class="jumbotron-heading mt-5" align='center'>Description</h2>
+                    {{pd.description}}
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+    
+{% endblock content %}{{ block.super }}
